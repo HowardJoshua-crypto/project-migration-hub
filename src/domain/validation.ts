@@ -88,7 +88,7 @@ export const opportunitySchema = z.object({
   skills: csv.refine((s) => s.length >= 1, "List at least one skill."),
   fields: csv,
   eligibilitySummary: trimmed(5, "Describe who can apply.", 400),
-  minEducation: z.enum(["", ...EDUCATION_LEVELS]),
+  minEducation: z.union([z.literal(""), z.enum(EDUCATION_LEVELS)]),
   programmes: csv,
   locations: csv,
   minExperienceMonths: z.coerce.number().int().min(0, "Can't be negative.").max(240),
