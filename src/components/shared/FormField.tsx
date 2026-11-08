@@ -37,7 +37,7 @@ export function SelectField({ id, label, error, hint, options, defaultValue, pla
   return (
     <div className={cn("space-y-1.5", className)}>
       <Label htmlFor={id}>{label}</Label>
-      <Select name={id} defaultValue={defaultValue || undefined}>
+      <Select name={id} {...(defaultValue ? { defaultValue } : {})}>
         <SelectTrigger id={id} className="h-11 bg-card" aria-invalid={!!error} aria-describedby={describedBy(id, error, hint)}><SelectValue placeholder={placeholder} /></SelectTrigger>
         <SelectContent>
           {options.map((o) => { const v = typeof o === "string" ? o : o.value; const l = typeof o === "string" ? o : o.label; return <SelectItem key={v || "_none"} value={v || "_none"}>{l}</SelectItem>; })}
