@@ -18,9 +18,12 @@ export function OpportunityForm({ orgId, initial = {}, errors, pending, onSubmit
 }) {
   const [publish, setPublish] = useState(false);
   const v = (k: string) => initial[k];
+  // Errors for fields this form doesn't show (shouldn't happen, but never hide a reason).
+  const shown = new Set(["title", "type", "workArrangement", "location", "fields", "openingDate", "deadline", "compensation", "funding", "summary", "description", "skills", "eligibilitySummary", "minEducation", "minExperienceMonths", "programmes", "locations"]);
+  const other = Object.entries(errors).filter(([k]) => !shown.has(k)).map(([, m]) => m);
   return (
     <form noValidate onSubmit={(e) => { e.preventDefault(); onSubmit(formValues(e.currentTarget), publish); }} className="space-y-6">
-      {errors["form"] && <p role="alert" className="rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{errors["form"]}</p>}
+      {other.length > 0 && <p role="alert" className="rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{other.join(" ")}</p>}
       <SectionCard title="Basics">
         <div className="grid gap-4 md:grid-cols-2">
           <Field id="title" label="Title" error={errors["title"]} placeholder="e.g. Junior Data Analyst Intern" defaultValue={v("title")} className="md:col-span-2" />
