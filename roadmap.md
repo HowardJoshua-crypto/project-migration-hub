@@ -1,11 +1,5 @@
 # Roadmap
 - [x] Phase 1 Plan and Structure (approved)
 - [x] Phase 2 Build the Interface (approved by starting Phase 3)
-- [ ] Phase 3 Core Functionalities (test data saved in the browser)
-  - [ ] Domain rules: 13 opportunity types, 7 application statuses, matching, validation
-  - [ ] Local test-data store + service layer (swap point for Phase 4)
-  - [ ] Talent: passport editing, privacy, preview, save, apply, history, notifications
-  - [ ] Employer: org profile, verification, opportunity drafts/edit/publish/close, applicants, statuses
-  - [ ] External apply: record outbound click, never mark as applied
-  - [ ] Tests for the rules; browser check of main flows
-- [ ] Phase 4 Real backend — waits on user approval after Phase 3
+- [x] Phase 3 Core Functionalities (test data saved in the browser) — awaiting user approval
+- [ ] Phase 4 Real backend (accounts, shared database, file uploads, admin verification) — waits on user approval
