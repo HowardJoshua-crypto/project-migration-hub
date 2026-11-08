@@ -9,7 +9,7 @@ import {
   SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { TestDataBadge } from "@/components/shared/MockBadge";
+import { MockBadge, TestDataBadge } from "@/components/shared/MockBadge";
 import { resetDb } from "@/services/store";
 import type { AreaConfig } from "./nav";
 
@@ -85,7 +85,7 @@ export function AppShell({ area, children }: { area: AreaConfig; children: React
           <SidebarTrigger />
           <span className="text-sm font-medium text-muted-foreground">{area.label} portal</span>
           <div className="ml-auto flex items-center gap-2">
-            <span className="hidden sm:inline-flex"><TestDataBadge /></span>
+            <span className="hidden sm:inline-flex">{area.key === "talent" || area.key === "employer" ? <TestDataBadge /> : <MockBadge label="Prototype preview" />}</span>
             {area.key === "talent" && (
               <Button asChild variant="ghost" size="icon" aria-label="Notifications"><Link to="/app/talent/notifications"><Bell /></Link></Button>
             )}
