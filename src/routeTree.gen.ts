@@ -10,33 +10,669 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as EmployersRouteImport } from './routes/employers'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as AppAdminRouteImport } from './routes/app.admin'
+import { Route as AppTalentRouteImport } from './routes/app.talent'
+import { Route as OpportunitiesIndexRouteImport } from './routes/opportunities.index'
+import { Route as OpportunitiesIdRouteImport } from './routes/opportunities.$id'
+import { Route as TalentIndexRouteImport } from './routes/talent.index'
+import { Route as TalentHandleRouteImport } from './routes/talent.$handle'
+import { Route as AppAdminIndexRouteImport } from './routes/app.admin.index'
+import { Route as AppAdminCredentialsRouteImport } from './routes/app.admin.credentials'
+import { Route as AppAdminOpportunitiesRouteImport } from './routes/app.admin.opportunities'
+import { Route as AppAdminOrganizationsRouteImport } from './routes/app.admin.organizations'
+import { Route as AppAdminReportsRouteImport } from './routes/app.admin.reports'
+import { Route as AppAdminUsersRouteImport } from './routes/app.admin.users'
+import { Route as AppOrgOrgIdRouteImport } from './routes/app.org.$orgId'
+import { Route as AppTalentIndexRouteImport } from './routes/app.talent.index'
+import { Route as AppTalentApplicationsRouteImport } from './routes/app.talent.applications'
+import { Route as AppTalentNotificationsRouteImport } from './routes/app.talent.notifications'
+import { Route as AppTalentPassportRouteImport } from './routes/app.talent.passport'
+import { Route as AppTalentSavedRouteImport } from './routes/app.talent.saved'
+import { Route as AppOrgOrgIdEmployerRouteImport } from './routes/app.org.$orgId._employer'
+import { Route as AppOrgOrgIdPartnerRouteImport } from './routes/app.org.$orgId.partner'
+import { Route as AppTalentOpportunitiesIndexRouteImport } from './routes/app.talent.opportunities.index'
+import { Route as AppTalentOpportunitiesIdRouteImport } from './routes/app.talent.opportunities.$id'
+import { Route as AppTalentPassportIndexRouteImport } from './routes/app.talent.passport.index'
+import { Route as AppTalentPassportCredentialsRouteImport } from './routes/app.talent.passport.credentials'
+import { Route as AppTalentPassportEducationRouteImport } from './routes/app.talent.passport.education'
+import { Route as AppTalentPassportExperienceRouteImport } from './routes/app.talent.passport.experience'
+import { Route as AppTalentPassportPersonalRouteImport } from './routes/app.talent.passport.personal'
+import { Route as AppTalentPassportPortfolioRouteImport } from './routes/app.talent.passport.portfolio'
+import { Route as AppTalentPassportPrivacyRouteImport } from './routes/app.talent.passport.privacy'
+import { Route as AppTalentPassportSkillsRouteImport } from './routes/app.talent.passport.skills'
+import { Route as AppOrgOrgIdEmployerIndexRouteImport } from './routes/app.org.$orgId._employer.index'
+import { Route as AppOrgOrgIdEmployerAnalyticsRouteImport } from './routes/app.org.$orgId._employer.analytics'
+import { Route as AppOrgOrgIdEmployerMembersRouteImport } from './routes/app.org.$orgId._employer.members'
+import { Route as AppOrgOrgIdEmployerProfileRouteImport } from './routes/app.org.$orgId._employer.profile'
+import { Route as AppOrgOrgIdEmployerTalentRouteImport } from './routes/app.org.$orgId._employer.talent'
+import { Route as AppOrgOrgIdEmployerVerificationRouteImport } from './routes/app.org.$orgId._employer.verification'
+import { Route as AppOrgOrgIdPartnerIndexRouteImport } from './routes/app.org.$orgId.partner.index'
+import { Route as AppOrgOrgIdPartnerPartnershipsRouteImport } from './routes/app.org.$orgId.partner.partnerships'
+import { Route as AppOrgOrgIdPartnerProfileRouteImport } from './routes/app.org.$orgId.partner.profile'
+import { Route as AppOrgOrgIdPartnerProgrammesRouteImport } from './routes/app.org.$orgId.partner.programmes'
+import { Route as AppOrgOrgIdPartnerProposalsRouteImport } from './routes/app.org.$orgId.partner.proposals'
+import { Route as AppOrgOrgIdPartnerReportsRouteImport } from './routes/app.org.$orgId.partner.reports'
+import { Route as AppOrgOrgIdEmployerApplicantsIndexRouteImport } from './routes/app.org.$orgId._employer.applicants.index'
+import { Route as AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport } from './routes/app.org.$orgId._employer.applicants.$applicationId'
+import { Route as AppOrgOrgIdEmployerOpportunitiesIndexRouteImport } from './routes/app.org.$orgId._employer.opportunities.index'
+import { Route as AppOrgOrgIdEmployerOpportunitiesNewRouteImport } from './routes/app.org.$orgId._employer.opportunities.new'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmployersRoute = EmployersRouteImport.update({
+  id: '/employers',
+  path: '/employers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminRoute = AppAdminRouteImport.update({
+  id: '/app/admin',
+  path: '/app/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTalentRoute = AppTalentRouteImport.update({
+  id: '/app/talent',
+  path: '/app/talent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesIndexRoute = OpportunitiesIndexRouteImport.update({
+  id: '/opportunities/',
+  path: '/opportunities/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OpportunitiesIdRoute = OpportunitiesIdRouteImport.update({
+  id: '/opportunities/$id',
+  path: '/opportunities/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TalentIndexRoute = TalentIndexRouteImport.update({
+  id: '/talent/',
+  path: '/talent/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TalentHandleRoute = TalentHandleRouteImport.update({
+  id: '/talent/$handle',
+  path: '/talent/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminCredentialsRoute = AppAdminCredentialsRouteImport.update({
+  id: '/credentials',
+  path: '/credentials',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminOpportunitiesRoute = AppAdminOpportunitiesRouteImport.update({
+  id: '/opportunities',
+  path: '/opportunities',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminOrganizationsRoute = AppAdminOrganizationsRouteImport.update({
+  id: '/organizations',
+  path: '/organizations',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminReportsRoute = AppAdminReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminUsersRoute = AppAdminUsersRouteImport.update({
+  id: '/users',
+  path: '/users',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppOrgOrgIdRoute = AppOrgOrgIdRouteImport.update({
+  id: '/app/org/$orgId',
+  path: '/app/org/$orgId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppTalentIndexRoute = AppTalentIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppTalentRoute,
+} as any)
+const AppTalentApplicationsRoute = AppTalentApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => AppTalentRoute,
+} as any)
+const AppTalentNotificationsRoute = AppTalentNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AppTalentRoute,
+} as any)
+const AppTalentPassportRoute = AppTalentPassportRouteImport.update({
+  id: '/passport',
+  path: '/passport',
+  getParentRoute: () => AppTalentRoute,
+} as any)
+const AppTalentSavedRoute = AppTalentSavedRouteImport.update({
+  id: '/saved',
+  path: '/saved',
+  getParentRoute: () => AppTalentRoute,
+} as any)
+const AppOrgOrgIdEmployerRoute = AppOrgOrgIdEmployerRouteImport.update({
+  id: '/_employer',
+  getParentRoute: () => AppOrgOrgIdRoute,
+} as any)
+const AppOrgOrgIdPartnerRoute = AppOrgOrgIdPartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => AppOrgOrgIdRoute,
+} as any)
+const AppTalentOpportunitiesIndexRoute =
+  AppTalentOpportunitiesIndexRouteImport.update({
+    id: '/opportunities/',
+    path: '/opportunities/',
+    getParentRoute: () => AppTalentRoute,
+  } as any)
+const AppTalentOpportunitiesIdRoute =
+  AppTalentOpportunitiesIdRouteImport.update({
+    id: '/opportunities/$id',
+    path: '/opportunities/$id',
+    getParentRoute: () => AppTalentRoute,
+  } as any)
+const AppTalentPassportIndexRoute = AppTalentPassportIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppTalentPassportRoute,
+} as any)
+const AppTalentPassportCredentialsRoute =
+  AppTalentPassportCredentialsRouteImport.update({
+    id: '/credentials',
+    path: '/credentials',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportEducationRoute =
+  AppTalentPassportEducationRouteImport.update({
+    id: '/education',
+    path: '/education',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportExperienceRoute =
+  AppTalentPassportExperienceRouteImport.update({
+    id: '/experience',
+    path: '/experience',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportPersonalRoute =
+  AppTalentPassportPersonalRouteImport.update({
+    id: '/personal',
+    path: '/personal',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportPortfolioRoute =
+  AppTalentPassportPortfolioRouteImport.update({
+    id: '/portfolio',
+    path: '/portfolio',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportPrivacyRoute =
+  AppTalentPassportPrivacyRouteImport.update({
+    id: '/privacy',
+    path: '/privacy',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
+const AppTalentPassportSkillsRoute = AppTalentPassportSkillsRouteImport.update({
+  id: '/skills',
+  path: '/skills',
+  getParentRoute: () => AppTalentPassportRoute,
+} as any)
+const AppOrgOrgIdEmployerIndexRoute =
+  AppOrgOrgIdEmployerIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerAnalyticsRoute =
+  AppOrgOrgIdEmployerAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerMembersRoute =
+  AppOrgOrgIdEmployerMembersRouteImport.update({
+    id: '/members',
+    path: '/members',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerProfileRoute =
+  AppOrgOrgIdEmployerProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerTalentRoute =
+  AppOrgOrgIdEmployerTalentRouteImport.update({
+    id: '/talent',
+    path: '/talent',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerVerificationRoute =
+  AppOrgOrgIdEmployerVerificationRouteImport.update({
+    id: '/verification',
+    path: '/verification',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdPartnerIndexRoute = AppOrgOrgIdPartnerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppOrgOrgIdPartnerRoute,
+} as any)
+const AppOrgOrgIdPartnerPartnershipsRoute =
+  AppOrgOrgIdPartnerPartnershipsRouteImport.update({
+    id: '/partnerships',
+    path: '/partnerships',
+    getParentRoute: () => AppOrgOrgIdPartnerRoute,
+  } as any)
+const AppOrgOrgIdPartnerProfileRoute =
+  AppOrgOrgIdPartnerProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => AppOrgOrgIdPartnerRoute,
+  } as any)
+const AppOrgOrgIdPartnerProgrammesRoute =
+  AppOrgOrgIdPartnerProgrammesRouteImport.update({
+    id: '/programmes',
+    path: '/programmes',
+    getParentRoute: () => AppOrgOrgIdPartnerRoute,
+  } as any)
+const AppOrgOrgIdPartnerProposalsRoute =
+  AppOrgOrgIdPartnerProposalsRouteImport.update({
+    id: '/proposals',
+    path: '/proposals',
+    getParentRoute: () => AppOrgOrgIdPartnerRoute,
+  } as any)
+const AppOrgOrgIdPartnerReportsRoute =
+  AppOrgOrgIdPartnerReportsRouteImport.update({
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => AppOrgOrgIdPartnerRoute,
+  } as any)
+const AppOrgOrgIdEmployerApplicantsIndexRoute =
+  AppOrgOrgIdEmployerApplicantsIndexRouteImport.update({
+    id: '/applicants/',
+    path: '/applicants/',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerApplicantsApplicationIdRoute =
+  AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport.update({
+    id: '/applicants/$applicationId',
+    path: '/applicants/$applicationId',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerOpportunitiesIndexRoute =
+  AppOrgOrgIdEmployerOpportunitiesIndexRouteImport.update({
+    id: '/opportunities/',
+    path: '/opportunities/',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerOpportunitiesNewRoute =
+  AppOrgOrgIdEmployerOpportunitiesNewRouteImport.update({
+    id: '/opportunities/new',
+    path: '/opportunities/new',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/employers': typeof EmployersRoute
+  '/login': typeof LoginRoute
+  '/partners': typeof PartnersRoute
+  '/signup': typeof SignupRoute
+  '/app/admin': typeof AppAdminRouteWithChildren
+  '/app/talent': typeof AppTalentRouteWithChildren
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/talent/$handle': typeof TalentHandleRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
+  '/talent/': typeof TalentIndexRoute
+  '/app/admin/credentials': typeof AppAdminCredentialsRoute
+  '/app/admin/opportunities': typeof AppAdminOpportunitiesRoute
+  '/app/admin/organizations': typeof AppAdminOrganizationsRoute
+  '/app/admin/reports': typeof AppAdminReportsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/org/$orgId': typeof AppOrgOrgIdRouteWithChildren
+  '/app/talent/applications': typeof AppTalentApplicationsRoute
+  '/app/talent/notifications': typeof AppTalentNotificationsRoute
+  '/app/talent/passport': typeof AppTalentPassportRouteWithChildren
+  '/app/talent/saved': typeof AppTalentSavedRoute
+  '/app/admin/': typeof AppAdminIndexRoute
+  '/app/talent/': typeof AppTalentIndexRoute
+  '/app/org/$orgId/partner': typeof AppOrgOrgIdPartnerRouteWithChildren
+  '/app/talent/opportunities/$id': typeof AppTalentOpportunitiesIdRoute
+  '/app/talent/passport/credentials': typeof AppTalentPassportCredentialsRoute
+  '/app/talent/passport/education': typeof AppTalentPassportEducationRoute
+  '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
+  '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
+  '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
+  '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
+  '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
+  '/app/talent/passport/': typeof AppTalentPassportIndexRoute
+  '/app/org/$orgId/analytics': typeof AppOrgOrgIdEmployerAnalyticsRoute
+  '/app/org/$orgId/members': typeof AppOrgOrgIdEmployerMembersRoute
+  '/app/org/$orgId/profile': typeof AppOrgOrgIdEmployerProfileRoute
+  '/app/org/$orgId/talent': typeof AppOrgOrgIdEmployerTalentRoute
+  '/app/org/$orgId/verification': typeof AppOrgOrgIdEmployerVerificationRoute
+  '/app/org/$orgId/partner/partnerships': typeof AppOrgOrgIdPartnerPartnershipsRoute
+  '/app/org/$orgId/partner/profile': typeof AppOrgOrgIdPartnerProfileRoute
+  '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
+  '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
+  '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/org/$orgId/': typeof AppOrgOrgIdEmployerIndexRoute
+  '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
+  '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
+  '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
+  '/app/org/$orgId/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
+  '/app/org/$orgId/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/employers': typeof EmployersRoute
+  '/login': typeof LoginRoute
+  '/partners': typeof PartnersRoute
+  '/signup': typeof SignupRoute
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/talent/$handle': typeof TalentHandleRoute
+  '/opportunities': typeof OpportunitiesIndexRoute
+  '/talent': typeof TalentIndexRoute
+  '/app/admin/credentials': typeof AppAdminCredentialsRoute
+  '/app/admin/opportunities': typeof AppAdminOpportunitiesRoute
+  '/app/admin/organizations': typeof AppAdminOrganizationsRoute
+  '/app/admin/reports': typeof AppAdminReportsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/org/$orgId': typeof AppOrgOrgIdEmployerIndexRoute
+  '/app/talent/applications': typeof AppTalentApplicationsRoute
+  '/app/talent/notifications': typeof AppTalentNotificationsRoute
+  '/app/talent/saved': typeof AppTalentSavedRoute
+  '/app/admin': typeof AppAdminIndexRoute
+  '/app/talent': typeof AppTalentIndexRoute
+  '/app/talent/opportunities/$id': typeof AppTalentOpportunitiesIdRoute
+  '/app/talent/passport/credentials': typeof AppTalentPassportCredentialsRoute
+  '/app/talent/passport/education': typeof AppTalentPassportEducationRoute
+  '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
+  '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
+  '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
+  '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
+  '/app/talent/opportunities': typeof AppTalentOpportunitiesIndexRoute
+  '/app/talent/passport': typeof AppTalentPassportIndexRoute
+  '/app/org/$orgId/analytics': typeof AppOrgOrgIdEmployerAnalyticsRoute
+  '/app/org/$orgId/members': typeof AppOrgOrgIdEmployerMembersRoute
+  '/app/org/$orgId/profile': typeof AppOrgOrgIdEmployerProfileRoute
+  '/app/org/$orgId/talent': typeof AppOrgOrgIdEmployerTalentRoute
+  '/app/org/$orgId/verification': typeof AppOrgOrgIdEmployerVerificationRoute
+  '/app/org/$orgId/partner/partnerships': typeof AppOrgOrgIdPartnerPartnershipsRoute
+  '/app/org/$orgId/partner/profile': typeof AppOrgOrgIdPartnerProfileRoute
+  '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
+  '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
+  '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/org/$orgId/partner': typeof AppOrgOrgIdPartnerIndexRoute
+  '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
+  '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
+  '/app/org/$orgId/applicants': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
+  '/app/org/$orgId/opportunities': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/employers': typeof EmployersRoute
+  '/login': typeof LoginRoute
+  '/partners': typeof PartnersRoute
+  '/signup': typeof SignupRoute
+  '/app/admin': typeof AppAdminRouteWithChildren
+  '/app/talent': typeof AppTalentRouteWithChildren
+  '/opportunities/$id': typeof OpportunitiesIdRoute
+  '/talent/$handle': typeof TalentHandleRoute
+  '/opportunities/': typeof OpportunitiesIndexRoute
+  '/talent/': typeof TalentIndexRoute
+  '/app/admin/credentials': typeof AppAdminCredentialsRoute
+  '/app/admin/opportunities': typeof AppAdminOpportunitiesRoute
+  '/app/admin/organizations': typeof AppAdminOrganizationsRoute
+  '/app/admin/reports': typeof AppAdminReportsRoute
+  '/app/admin/users': typeof AppAdminUsersRoute
+  '/app/org/$orgId': typeof AppOrgOrgIdRouteWithChildren
+  '/app/talent/applications': typeof AppTalentApplicationsRoute
+  '/app/talent/notifications': typeof AppTalentNotificationsRoute
+  '/app/talent/passport': typeof AppTalentPassportRouteWithChildren
+  '/app/talent/saved': typeof AppTalentSavedRoute
+  '/app/admin/': typeof AppAdminIndexRoute
+  '/app/talent/': typeof AppTalentIndexRoute
+  '/app/org/$orgId/_employer': typeof AppOrgOrgIdEmployerRouteWithChildren
+  '/app/org/$orgId/partner': typeof AppOrgOrgIdPartnerRouteWithChildren
+  '/app/talent/opportunities/$id': typeof AppTalentOpportunitiesIdRoute
+  '/app/talent/passport/credentials': typeof AppTalentPassportCredentialsRoute
+  '/app/talent/passport/education': typeof AppTalentPassportEducationRoute
+  '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
+  '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
+  '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
+  '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
+  '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
+  '/app/talent/passport/': typeof AppTalentPassportIndexRoute
+  '/app/org/$orgId/_employer/analytics': typeof AppOrgOrgIdEmployerAnalyticsRoute
+  '/app/org/$orgId/_employer/members': typeof AppOrgOrgIdEmployerMembersRoute
+  '/app/org/$orgId/_employer/profile': typeof AppOrgOrgIdEmployerProfileRoute
+  '/app/org/$orgId/_employer/talent': typeof AppOrgOrgIdEmployerTalentRoute
+  '/app/org/$orgId/_employer/verification': typeof AppOrgOrgIdEmployerVerificationRoute
+  '/app/org/$orgId/partner/partnerships': typeof AppOrgOrgIdPartnerPartnershipsRoute
+  '/app/org/$orgId/partner/profile': typeof AppOrgOrgIdPartnerProfileRoute
+  '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
+  '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
+  '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/org/$orgId/_employer/': typeof AppOrgOrgIdEmployerIndexRoute
+  '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
+  '/app/org/$orgId/_employer/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
+  '/app/org/$orgId/_employer/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
+  '/app/org/$orgId/_employer/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
+  '/app/org/$orgId/_employer/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/employers'
+    | '/login'
+    | '/partners'
+    | '/signup'
+    | '/app/admin'
+    | '/app/talent'
+    | '/opportunities/$id'
+    | '/talent/$handle'
+    | '/opportunities/'
+    | '/talent/'
+    | '/app/admin/credentials'
+    | '/app/admin/opportunities'
+    | '/app/admin/organizations'
+    | '/app/admin/reports'
+    | '/app/admin/users'
+    | '/app/org/$orgId'
+    | '/app/talent/applications'
+    | '/app/talent/notifications'
+    | '/app/talent/passport'
+    | '/app/talent/saved'
+    | '/app/admin/'
+    | '/app/talent/'
+    | '/app/org/$orgId/partner'
+    | '/app/talent/opportunities/$id'
+    | '/app/talent/passport/credentials'
+    | '/app/talent/passport/education'
+    | '/app/talent/passport/experience'
+    | '/app/talent/passport/personal'
+    | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/privacy'
+    | '/app/talent/passport/skills'
+    | '/app/talent/opportunities/'
+    | '/app/talent/passport/'
+    | '/app/org/$orgId/analytics'
+    | '/app/org/$orgId/members'
+    | '/app/org/$orgId/profile'
+    | '/app/org/$orgId/talent'
+    | '/app/org/$orgId/verification'
+    | '/app/org/$orgId/partner/partnerships'
+    | '/app/org/$orgId/partner/profile'
+    | '/app/org/$orgId/partner/programmes'
+    | '/app/org/$orgId/partner/proposals'
+    | '/app/org/$orgId/partner/reports'
+    | '/app/org/$orgId/'
+    | '/app/org/$orgId/partner/'
+    | '/app/org/$orgId/applicants/$applicationId'
+    | '/app/org/$orgId/opportunities/new'
+    | '/app/org/$orgId/applicants/'
+    | '/app/org/$orgId/opportunities/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/employers'
+    | '/login'
+    | '/partners'
+    | '/signup'
+    | '/opportunities/$id'
+    | '/talent/$handle'
+    | '/opportunities'
+    | '/talent'
+    | '/app/admin/credentials'
+    | '/app/admin/opportunities'
+    | '/app/admin/organizations'
+    | '/app/admin/reports'
+    | '/app/admin/users'
+    | '/app/org/$orgId'
+    | '/app/talent/applications'
+    | '/app/talent/notifications'
+    | '/app/talent/saved'
+    | '/app/admin'
+    | '/app/talent'
+    | '/app/talent/opportunities/$id'
+    | '/app/talent/passport/credentials'
+    | '/app/talent/passport/education'
+    | '/app/talent/passport/experience'
+    | '/app/talent/passport/personal'
+    | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/privacy'
+    | '/app/talent/passport/skills'
+    | '/app/talent/opportunities'
+    | '/app/talent/passport'
+    | '/app/org/$orgId/analytics'
+    | '/app/org/$orgId/members'
+    | '/app/org/$orgId/profile'
+    | '/app/org/$orgId/talent'
+    | '/app/org/$orgId/verification'
+    | '/app/org/$orgId/partner/partnerships'
+    | '/app/org/$orgId/partner/profile'
+    | '/app/org/$orgId/partner/programmes'
+    | '/app/org/$orgId/partner/proposals'
+    | '/app/org/$orgId/partner/reports'
+    | '/app/org/$orgId/partner'
+    | '/app/org/$orgId/applicants/$applicationId'
+    | '/app/org/$orgId/opportunities/new'
+    | '/app/org/$orgId/applicants'
+    | '/app/org/$orgId/opportunities'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/employers'
+    | '/login'
+    | '/partners'
+    | '/signup'
+    | '/app/admin'
+    | '/app/talent'
+    | '/opportunities/$id'
+    | '/talent/$handle'
+    | '/opportunities/'
+    | '/talent/'
+    | '/app/admin/credentials'
+    | '/app/admin/opportunities'
+    | '/app/admin/organizations'
+    | '/app/admin/reports'
+    | '/app/admin/users'
+    | '/app/org/$orgId'
+    | '/app/talent/applications'
+    | '/app/talent/notifications'
+    | '/app/talent/passport'
+    | '/app/talent/saved'
+    | '/app/admin/'
+    | '/app/talent/'
+    | '/app/org/$orgId/_employer'
+    | '/app/org/$orgId/partner'
+    | '/app/talent/opportunities/$id'
+    | '/app/talent/passport/credentials'
+    | '/app/talent/passport/education'
+    | '/app/talent/passport/experience'
+    | '/app/talent/passport/personal'
+    | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/privacy'
+    | '/app/talent/passport/skills'
+    | '/app/talent/opportunities/'
+    | '/app/talent/passport/'
+    | '/app/org/$orgId/_employer/analytics'
+    | '/app/org/$orgId/_employer/members'
+    | '/app/org/$orgId/_employer/profile'
+    | '/app/org/$orgId/_employer/talent'
+    | '/app/org/$orgId/_employer/verification'
+    | '/app/org/$orgId/partner/partnerships'
+    | '/app/org/$orgId/partner/profile'
+    | '/app/org/$orgId/partner/programmes'
+    | '/app/org/$orgId/partner/proposals'
+    | '/app/org/$orgId/partner/reports'
+    | '/app/org/$orgId/_employer/'
+    | '/app/org/$orgId/partner/'
+    | '/app/org/$orgId/_employer/applicants/$applicationId'
+    | '/app/org/$orgId/_employer/opportunities/new'
+    | '/app/org/$orgId/_employer/applicants/'
+    | '/app/org/$orgId/_employer/opportunities/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  EmployersRoute: typeof EmployersRoute
+  LoginRoute: typeof LoginRoute
+  PartnersRoute: typeof PartnersRoute
+  SignupRoute: typeof SignupRoute
+  AppAdminRoute: typeof AppAdminRouteWithChildren
+  AppTalentRoute: typeof AppTalentRouteWithChildren
+  OpportunitiesIdRoute: typeof OpportunitiesIdRoute
+  TalentHandleRoute: typeof TalentHandleRoute
+  OpportunitiesIndexRoute: typeof OpportunitiesIndexRoute
+  TalentIndexRoute: typeof TalentIndexRoute
+  AppOrgOrgIdRoute: typeof AppOrgOrgIdRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +684,519 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/employers': {
+      id: '/employers'
+      path: '/employers'
+      fullPath: '/employers'
+      preLoaderRoute: typeof EmployersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin': {
+      id: '/app/admin'
+      path: '/app/admin'
+      fullPath: '/app/admin'
+      preLoaderRoute: typeof AppAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/talent': {
+      id: '/app/talent'
+      path: '/app/talent'
+      fullPath: '/app/talent'
+      preLoaderRoute: typeof AppTalentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities/': {
+      id: '/opportunities/'
+      path: '/opportunities'
+      fullPath: '/opportunities/'
+      preLoaderRoute: typeof OpportunitiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/opportunities/$id': {
+      id: '/opportunities/$id'
+      path: '/opportunities/$id'
+      fullPath: '/opportunities/$id'
+      preLoaderRoute: typeof OpportunitiesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/talent/': {
+      id: '/talent/'
+      path: '/talent'
+      fullPath: '/talent/'
+      preLoaderRoute: typeof TalentIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/talent/$handle': {
+      id: '/talent/$handle'
+      path: '/talent/$handle'
+      fullPath: '/talent/$handle'
+      preLoaderRoute: typeof TalentHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/admin/': {
+      id: '/app/admin/'
+      path: '/'
+      fullPath: '/app/admin/'
+      preLoaderRoute: typeof AppAdminIndexRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/admin/credentials': {
+      id: '/app/admin/credentials'
+      path: '/credentials'
+      fullPath: '/app/admin/credentials'
+      preLoaderRoute: typeof AppAdminCredentialsRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/admin/opportunities': {
+      id: '/app/admin/opportunities'
+      path: '/opportunities'
+      fullPath: '/app/admin/opportunities'
+      preLoaderRoute: typeof AppAdminOpportunitiesRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/admin/organizations': {
+      id: '/app/admin/organizations'
+      path: '/organizations'
+      fullPath: '/app/admin/organizations'
+      preLoaderRoute: typeof AppAdminOrganizationsRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/admin/reports': {
+      id: '/app/admin/reports'
+      path: '/reports'
+      fullPath: '/app/admin/reports'
+      preLoaderRoute: typeof AppAdminReportsRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/admin/users': {
+      id: '/app/admin/users'
+      path: '/users'
+      fullPath: '/app/admin/users'
+      preLoaderRoute: typeof AppAdminUsersRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/app/org/$orgId': {
+      id: '/app/org/$orgId'
+      path: '/app/org/$orgId'
+      fullPath: '/app/org/$orgId'
+      preLoaderRoute: typeof AppOrgOrgIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/talent/': {
+      id: '/app/talent/'
+      path: '/'
+      fullPath: '/app/talent/'
+      preLoaderRoute: typeof AppTalentIndexRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/applications': {
+      id: '/app/talent/applications'
+      path: '/applications'
+      fullPath: '/app/talent/applications'
+      preLoaderRoute: typeof AppTalentApplicationsRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/notifications': {
+      id: '/app/talent/notifications'
+      path: '/notifications'
+      fullPath: '/app/talent/notifications'
+      preLoaderRoute: typeof AppTalentNotificationsRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/passport': {
+      id: '/app/talent/passport'
+      path: '/passport'
+      fullPath: '/app/talent/passport'
+      preLoaderRoute: typeof AppTalentPassportRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/saved': {
+      id: '/app/talent/saved'
+      path: '/saved'
+      fullPath: '/app/talent/saved'
+      preLoaderRoute: typeof AppTalentSavedRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/org/$orgId/_employer': {
+      id: '/app/org/$orgId/_employer'
+      path: ''
+      fullPath: '/app/org/$orgId'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerRouteImport
+      parentRoute: typeof AppOrgOrgIdRoute
+    }
+    '/app/org/$orgId/partner': {
+      id: '/app/org/$orgId/partner'
+      path: '/partner'
+      fullPath: '/app/org/$orgId/partner'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerRouteImport
+      parentRoute: typeof AppOrgOrgIdRoute
+    }
+    '/app/talent/opportunities/': {
+      id: '/app/talent/opportunities/'
+      path: '/opportunities'
+      fullPath: '/app/talent/opportunities/'
+      preLoaderRoute: typeof AppTalentOpportunitiesIndexRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/opportunities/$id': {
+      id: '/app/talent/opportunities/$id'
+      path: '/opportunities/$id'
+      fullPath: '/app/talent/opportunities/$id'
+      preLoaderRoute: typeof AppTalentOpportunitiesIdRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
+    '/app/talent/passport/': {
+      id: '/app/talent/passport/'
+      path: '/'
+      fullPath: '/app/talent/passport/'
+      preLoaderRoute: typeof AppTalentPassportIndexRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/credentials': {
+      id: '/app/talent/passport/credentials'
+      path: '/credentials'
+      fullPath: '/app/talent/passport/credentials'
+      preLoaderRoute: typeof AppTalentPassportCredentialsRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/education': {
+      id: '/app/talent/passport/education'
+      path: '/education'
+      fullPath: '/app/talent/passport/education'
+      preLoaderRoute: typeof AppTalentPassportEducationRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/experience': {
+      id: '/app/talent/passport/experience'
+      path: '/experience'
+      fullPath: '/app/talent/passport/experience'
+      preLoaderRoute: typeof AppTalentPassportExperienceRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/personal': {
+      id: '/app/talent/passport/personal'
+      path: '/personal'
+      fullPath: '/app/talent/passport/personal'
+      preLoaderRoute: typeof AppTalentPassportPersonalRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/portfolio': {
+      id: '/app/talent/passport/portfolio'
+      path: '/portfolio'
+      fullPath: '/app/talent/passport/portfolio'
+      preLoaderRoute: typeof AppTalentPassportPortfolioRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/privacy': {
+      id: '/app/talent/passport/privacy'
+      path: '/privacy'
+      fullPath: '/app/talent/passport/privacy'
+      preLoaderRoute: typeof AppTalentPassportPrivacyRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/talent/passport/skills': {
+      id: '/app/talent/passport/skills'
+      path: '/skills'
+      fullPath: '/app/talent/passport/skills'
+      preLoaderRoute: typeof AppTalentPassportSkillsRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
+    '/app/org/$orgId/_employer/': {
+      id: '/app/org/$orgId/_employer/'
+      path: '/'
+      fullPath: '/app/org/$orgId/'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerIndexRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/analytics': {
+      id: '/app/org/$orgId/_employer/analytics'
+      path: '/analytics'
+      fullPath: '/app/org/$orgId/analytics'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerAnalyticsRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/members': {
+      id: '/app/org/$orgId/_employer/members'
+      path: '/members'
+      fullPath: '/app/org/$orgId/members'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerMembersRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/profile': {
+      id: '/app/org/$orgId/_employer/profile'
+      path: '/profile'
+      fullPath: '/app/org/$orgId/profile'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerProfileRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/talent': {
+      id: '/app/org/$orgId/_employer/talent'
+      path: '/talent'
+      fullPath: '/app/org/$orgId/talent'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerTalentRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/verification': {
+      id: '/app/org/$orgId/_employer/verification'
+      path: '/verification'
+      fullPath: '/app/org/$orgId/verification'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerVerificationRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/partner/': {
+      id: '/app/org/$orgId/partner/'
+      path: '/'
+      fullPath: '/app/org/$orgId/partner/'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerIndexRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/partner/partnerships': {
+      id: '/app/org/$orgId/partner/partnerships'
+      path: '/partnerships'
+      fullPath: '/app/org/$orgId/partner/partnerships'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerPartnershipsRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/partner/profile': {
+      id: '/app/org/$orgId/partner/profile'
+      path: '/profile'
+      fullPath: '/app/org/$orgId/partner/profile'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerProfileRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/partner/programmes': {
+      id: '/app/org/$orgId/partner/programmes'
+      path: '/programmes'
+      fullPath: '/app/org/$orgId/partner/programmes'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerProgrammesRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/partner/proposals': {
+      id: '/app/org/$orgId/partner/proposals'
+      path: '/proposals'
+      fullPath: '/app/org/$orgId/partner/proposals'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerProposalsRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/partner/reports': {
+      id: '/app/org/$orgId/partner/reports'
+      path: '/reports'
+      fullPath: '/app/org/$orgId/partner/reports'
+      preLoaderRoute: typeof AppOrgOrgIdPartnerReportsRouteImport
+      parentRoute: typeof AppOrgOrgIdPartnerRoute
+    }
+    '/app/org/$orgId/_employer/applicants/': {
+      id: '/app/org/$orgId/_employer/applicants/'
+      path: '/applicants'
+      fullPath: '/app/org/$orgId/applicants/'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerApplicantsIndexRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/applicants/$applicationId': {
+      id: '/app/org/$orgId/_employer/applicants/$applicationId'
+      path: '/applicants/$applicationId'
+      fullPath: '/app/org/$orgId/applicants/$applicationId'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/opportunities/': {
+      id: '/app/org/$orgId/_employer/opportunities/'
+      path: '/opportunities'
+      fullPath: '/app/org/$orgId/opportunities/'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesIndexRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/opportunities/new': {
+      id: '/app/org/$orgId/_employer/opportunities/new'
+      path: '/opportunities/new'
+      fullPath: '/app/org/$orgId/opportunities/new'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
   }
 }
 
+interface AppAdminRouteChildren {
+  AppAdminCredentialsRoute: typeof AppAdminCredentialsRoute
+  AppAdminOpportunitiesRoute: typeof AppAdminOpportunitiesRoute
+  AppAdminOrganizationsRoute: typeof AppAdminOrganizationsRoute
+  AppAdminReportsRoute: typeof AppAdminReportsRoute
+  AppAdminUsersRoute: typeof AppAdminUsersRoute
+  AppAdminIndexRoute: typeof AppAdminIndexRoute
+}
+
+const AppAdminRouteChildren: AppAdminRouteChildren = {
+  AppAdminCredentialsRoute: AppAdminCredentialsRoute,
+  AppAdminOpportunitiesRoute: AppAdminOpportunitiesRoute,
+  AppAdminOrganizationsRoute: AppAdminOrganizationsRoute,
+  AppAdminReportsRoute: AppAdminReportsRoute,
+  AppAdminUsersRoute: AppAdminUsersRoute,
+  AppAdminIndexRoute: AppAdminIndexRoute,
+}
+
+const AppAdminRouteWithChildren = AppAdminRoute._addFileChildren(
+  AppAdminRouteChildren,
+)
+
+interface AppTalentPassportRouteChildren {
+  AppTalentPassportCredentialsRoute: typeof AppTalentPassportCredentialsRoute
+  AppTalentPassportEducationRoute: typeof AppTalentPassportEducationRoute
+  AppTalentPassportExperienceRoute: typeof AppTalentPassportExperienceRoute
+  AppTalentPassportPersonalRoute: typeof AppTalentPassportPersonalRoute
+  AppTalentPassportPortfolioRoute: typeof AppTalentPassportPortfolioRoute
+  AppTalentPassportPrivacyRoute: typeof AppTalentPassportPrivacyRoute
+  AppTalentPassportSkillsRoute: typeof AppTalentPassportSkillsRoute
+  AppTalentPassportIndexRoute: typeof AppTalentPassportIndexRoute
+}
+
+const AppTalentPassportRouteChildren: AppTalentPassportRouteChildren = {
+  AppTalentPassportCredentialsRoute: AppTalentPassportCredentialsRoute,
+  AppTalentPassportEducationRoute: AppTalentPassportEducationRoute,
+  AppTalentPassportExperienceRoute: AppTalentPassportExperienceRoute,
+  AppTalentPassportPersonalRoute: AppTalentPassportPersonalRoute,
+  AppTalentPassportPortfolioRoute: AppTalentPassportPortfolioRoute,
+  AppTalentPassportPrivacyRoute: AppTalentPassportPrivacyRoute,
+  AppTalentPassportSkillsRoute: AppTalentPassportSkillsRoute,
+  AppTalentPassportIndexRoute: AppTalentPassportIndexRoute,
+}
+
+const AppTalentPassportRouteWithChildren =
+  AppTalentPassportRoute._addFileChildren(AppTalentPassportRouteChildren)
+
+interface AppTalentRouteChildren {
+  AppTalentApplicationsRoute: typeof AppTalentApplicationsRoute
+  AppTalentNotificationsRoute: typeof AppTalentNotificationsRoute
+  AppTalentPassportRoute: typeof AppTalentPassportRouteWithChildren
+  AppTalentSavedRoute: typeof AppTalentSavedRoute
+  AppTalentIndexRoute: typeof AppTalentIndexRoute
+  AppTalentOpportunitiesIdRoute: typeof AppTalentOpportunitiesIdRoute
+  AppTalentOpportunitiesIndexRoute: typeof AppTalentOpportunitiesIndexRoute
+}
+
+const AppTalentRouteChildren: AppTalentRouteChildren = {
+  AppTalentApplicationsRoute: AppTalentApplicationsRoute,
+  AppTalentNotificationsRoute: AppTalentNotificationsRoute,
+  AppTalentPassportRoute: AppTalentPassportRouteWithChildren,
+  AppTalentSavedRoute: AppTalentSavedRoute,
+  AppTalentIndexRoute: AppTalentIndexRoute,
+  AppTalentOpportunitiesIdRoute: AppTalentOpportunitiesIdRoute,
+  AppTalentOpportunitiesIndexRoute: AppTalentOpportunitiesIndexRoute,
+}
+
+const AppTalentRouteWithChildren = AppTalentRoute._addFileChildren(
+  AppTalentRouteChildren,
+)
+
+interface AppOrgOrgIdEmployerRouteChildren {
+  AppOrgOrgIdEmployerAnalyticsRoute: typeof AppOrgOrgIdEmployerAnalyticsRoute
+  AppOrgOrgIdEmployerMembersRoute: typeof AppOrgOrgIdEmployerMembersRoute
+  AppOrgOrgIdEmployerProfileRoute: typeof AppOrgOrgIdEmployerProfileRoute
+  AppOrgOrgIdEmployerTalentRoute: typeof AppOrgOrgIdEmployerTalentRoute
+  AppOrgOrgIdEmployerVerificationRoute: typeof AppOrgOrgIdEmployerVerificationRoute
+  AppOrgOrgIdEmployerIndexRoute: typeof AppOrgOrgIdEmployerIndexRoute
+  AppOrgOrgIdEmployerApplicantsApplicationIdRoute: typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
+  AppOrgOrgIdEmployerOpportunitiesNewRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
+  AppOrgOrgIdEmployerApplicantsIndexRoute: typeof AppOrgOrgIdEmployerApplicantsIndexRoute
+  AppOrgOrgIdEmployerOpportunitiesIndexRoute: typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+}
+
+const AppOrgOrgIdEmployerRouteChildren: AppOrgOrgIdEmployerRouteChildren = {
+  AppOrgOrgIdEmployerAnalyticsRoute: AppOrgOrgIdEmployerAnalyticsRoute,
+  AppOrgOrgIdEmployerMembersRoute: AppOrgOrgIdEmployerMembersRoute,
+  AppOrgOrgIdEmployerProfileRoute: AppOrgOrgIdEmployerProfileRoute,
+  AppOrgOrgIdEmployerTalentRoute: AppOrgOrgIdEmployerTalentRoute,
+  AppOrgOrgIdEmployerVerificationRoute: AppOrgOrgIdEmployerVerificationRoute,
+  AppOrgOrgIdEmployerIndexRoute: AppOrgOrgIdEmployerIndexRoute,
+  AppOrgOrgIdEmployerApplicantsApplicationIdRoute:
+    AppOrgOrgIdEmployerApplicantsApplicationIdRoute,
+  AppOrgOrgIdEmployerOpportunitiesNewRoute:
+    AppOrgOrgIdEmployerOpportunitiesNewRoute,
+  AppOrgOrgIdEmployerApplicantsIndexRoute:
+    AppOrgOrgIdEmployerApplicantsIndexRoute,
+  AppOrgOrgIdEmployerOpportunitiesIndexRoute:
+    AppOrgOrgIdEmployerOpportunitiesIndexRoute,
+}
+
+const AppOrgOrgIdEmployerRouteWithChildren =
+  AppOrgOrgIdEmployerRoute._addFileChildren(AppOrgOrgIdEmployerRouteChildren)
+
+interface AppOrgOrgIdPartnerRouteChildren {
+  AppOrgOrgIdPartnerPartnershipsRoute: typeof AppOrgOrgIdPartnerPartnershipsRoute
+  AppOrgOrgIdPartnerProfileRoute: typeof AppOrgOrgIdPartnerProfileRoute
+  AppOrgOrgIdPartnerProgrammesRoute: typeof AppOrgOrgIdPartnerProgrammesRoute
+  AppOrgOrgIdPartnerProposalsRoute: typeof AppOrgOrgIdPartnerProposalsRoute
+  AppOrgOrgIdPartnerReportsRoute: typeof AppOrgOrgIdPartnerReportsRoute
+  AppOrgOrgIdPartnerIndexRoute: typeof AppOrgOrgIdPartnerIndexRoute
+}
+
+const AppOrgOrgIdPartnerRouteChildren: AppOrgOrgIdPartnerRouteChildren = {
+  AppOrgOrgIdPartnerPartnershipsRoute: AppOrgOrgIdPartnerPartnershipsRoute,
+  AppOrgOrgIdPartnerProfileRoute: AppOrgOrgIdPartnerProfileRoute,
+  AppOrgOrgIdPartnerProgrammesRoute: AppOrgOrgIdPartnerProgrammesRoute,
+  AppOrgOrgIdPartnerProposalsRoute: AppOrgOrgIdPartnerProposalsRoute,
+  AppOrgOrgIdPartnerReportsRoute: AppOrgOrgIdPartnerReportsRoute,
+  AppOrgOrgIdPartnerIndexRoute: AppOrgOrgIdPartnerIndexRoute,
+}
+
+const AppOrgOrgIdPartnerRouteWithChildren =
+  AppOrgOrgIdPartnerRoute._addFileChildren(AppOrgOrgIdPartnerRouteChildren)
+
+interface AppOrgOrgIdRouteChildren {
+  AppOrgOrgIdEmployerRoute: typeof AppOrgOrgIdEmployerRouteWithChildren
+  AppOrgOrgIdPartnerRoute: typeof AppOrgOrgIdPartnerRouteWithChildren
+}
+
+const AppOrgOrgIdRouteChildren: AppOrgOrgIdRouteChildren = {
+  AppOrgOrgIdEmployerRoute: AppOrgOrgIdEmployerRouteWithChildren,
+  AppOrgOrgIdPartnerRoute: AppOrgOrgIdPartnerRouteWithChildren,
+}
+
+const AppOrgOrgIdRouteWithChildren = AppOrgOrgIdRoute._addFileChildren(
+  AppOrgOrgIdRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  EmployersRoute: EmployersRoute,
+  LoginRoute: LoginRoute,
+  PartnersRoute: PartnersRoute,
+  SignupRoute: SignupRoute,
+  AppAdminRoute: AppAdminRouteWithChildren,
+  AppTalentRoute: AppTalentRouteWithChildren,
+  OpportunitiesIdRoute: OpportunitiesIdRoute,
+  TalentHandleRoute: TalentHandleRoute,
+  OpportunitiesIndexRoute: OpportunitiesIndexRoute,
+  TalentIndexRoute: TalentIndexRoute,
+  AppOrgOrgIdRoute: AppOrgOrgIdRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

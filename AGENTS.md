@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Portal routes live under `/app/talent`, `/app/org/$orgId`, `/app/org/$orgId/partner`, `/app/admin`; one shared AppShell driven by a nav config per area, so new areas plug in without new layouts.
+- Phase 2 mock data lives only in `src/mocks/` and every screen using it shows a MockBadge, so later phases can swap in real queries by deleting imports.
