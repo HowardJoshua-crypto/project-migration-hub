@@ -5,7 +5,7 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { OpportunityCard } from "@/components/shared/OpportunityCard";
 import { OpportunitySearch } from "@/components/shared/OpportunitySearch";
 import { MockBadge } from "@/components/shared/MockBadge";
-import { opportunities } from "@/mocks/data";
+import { seedOpportunities } from "@/mocks/data";
 import hero from "@/assets/hero-graduates.jpg";
 
 export const Route = createFileRoute("/")({
@@ -60,7 +60,7 @@ function Home() {
           <Button asChild variant="outline"><Link to="/opportunities" search={{}}>View all <ArrowRight /></Link></Button>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {opportunities.slice(0, 3).map((op) => <OpportunityCard key={op.id} op={op} />)}
+          {seedOpportunities.filter((o) => o.status === "PUBLISHED").slice(0, 3).map((op) => <OpportunityCard key={op.id} op={op} />)}
         </div>
       </section>
 

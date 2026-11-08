@@ -43,6 +43,7 @@ import { Route as AppTalentPassportEducationRouteImport } from './routes/app.tal
 import { Route as AppTalentPassportExperienceRouteImport } from './routes/app.talent.passport.experience'
 import { Route as AppTalentPassportPersonalRouteImport } from './routes/app.talent.passport.personal'
 import { Route as AppTalentPassportPortfolioRouteImport } from './routes/app.talent.passport.portfolio'
+import { Route as AppTalentPassportPreviewRouteImport } from './routes/app.talent.passport.preview'
 import { Route as AppTalentPassportPrivacyRouteImport } from './routes/app.talent.passport.privacy'
 import { Route as AppTalentPassportSkillsRouteImport } from './routes/app.talent.passport.skills'
 import { Route as AppOrgOrgIdEmployerIndexRouteImport } from './routes/app.org.$orgId._employer.index'
@@ -57,10 +58,12 @@ import { Route as AppOrgOrgIdPartnerProfileRouteImport } from './routes/app.org.
 import { Route as AppOrgOrgIdPartnerProgrammesRouteImport } from './routes/app.org.$orgId.partner.programmes'
 import { Route as AppOrgOrgIdPartnerProposalsRouteImport } from './routes/app.org.$orgId.partner.proposals'
 import { Route as AppOrgOrgIdPartnerReportsRouteImport } from './routes/app.org.$orgId.partner.reports'
+import { Route as AppTalentOpportunitiesIdApplyRouteImport } from './routes/app.talent.opportunities.$id_.apply'
 import { Route as AppOrgOrgIdEmployerApplicantsIndexRouteImport } from './routes/app.org.$orgId._employer.applicants.index'
 import { Route as AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport } from './routes/app.org.$orgId._employer.applicants.$applicationId'
 import { Route as AppOrgOrgIdEmployerOpportunitiesIndexRouteImport } from './routes/app.org.$orgId._employer.opportunities.index'
 import { Route as AppOrgOrgIdEmployerOpportunitiesNewRouteImport } from './routes/app.org.$orgId._employer.opportunities.new'
+import { Route as AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport } from './routes/app.org.$orgId._employer.opportunities.$opportunityId.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -238,6 +241,12 @@ const AppTalentPassportPortfolioRoute =
     path: '/portfolio',
     getParentRoute: () => AppTalentPassportRoute,
   } as any)
+const AppTalentPassportPreviewRoute =
+  AppTalentPassportPreviewRouteImport.update({
+    id: '/preview',
+    path: '/preview',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
 const AppTalentPassportPrivacyRoute =
   AppTalentPassportPrivacyRouteImport.update({
     id: '/privacy',
@@ -320,6 +329,12 @@ const AppOrgOrgIdPartnerReportsRoute =
     path: '/reports',
     getParentRoute: () => AppOrgOrgIdPartnerRoute,
   } as any)
+const AppTalentOpportunitiesIdApplyRoute =
+  AppTalentOpportunitiesIdApplyRouteImport.update({
+    id: '/opportunities/$id_/apply',
+    path: '/opportunities/$id/apply',
+    getParentRoute: () => AppTalentRoute,
+  } as any)
 const AppOrgOrgIdEmployerApplicantsIndexRoute =
   AppOrgOrgIdEmployerApplicantsIndexRouteImport.update({
     id: '/applicants/',
@@ -342,6 +357,12 @@ const AppOrgOrgIdEmployerOpportunitiesNewRoute =
   AppOrgOrgIdEmployerOpportunitiesNewRouteImport.update({
     id: '/opportunities/new',
     path: '/opportunities/new',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
+const AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute =
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport.update({
+    id: '/opportunities/$opportunityId/edit',
+    path: '/opportunities/$opportunityId/edit',
     getParentRoute: () => AppOrgOrgIdEmployerRoute,
   } as any)
 
@@ -377,6 +398,7 @@ export interface FileRoutesByFullPath {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
@@ -391,12 +413,14 @@ export interface FileRoutesByFullPath {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/': typeof AppOrgOrgIdEmployerIndexRoute
   '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
   '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -426,6 +450,7 @@ export interface FileRoutesByTo {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities': typeof AppTalentOpportunitiesIndexRoute
@@ -440,11 +465,13 @@ export interface FileRoutesByTo {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/partner': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
   '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/applicants': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/opportunities': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -480,6 +507,7 @@ export interface FileRoutesById {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
@@ -494,12 +522,14 @@ export interface FileRoutesById {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id_/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/_employer/': typeof AppOrgOrgIdEmployerIndexRoute
   '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/_employer/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
   '/app/org/$orgId/_employer/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/_employer/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/_employer/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/_employer/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -535,6 +565,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities/'
@@ -549,12 +580,14 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id/apply'
     | '/app/org/$orgId/'
     | '/app/org/$orgId/partner/'
     | '/app/org/$orgId/applicants/$applicationId'
     | '/app/org/$orgId/opportunities/new'
     | '/app/org/$orgId/applicants/'
     | '/app/org/$orgId/opportunities/'
+    | '/app/org/$orgId/opportunities/$opportunityId/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -584,6 +617,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities'
@@ -598,11 +632,13 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id/apply'
     | '/app/org/$orgId/partner'
     | '/app/org/$orgId/applicants/$applicationId'
     | '/app/org/$orgId/opportunities/new'
     | '/app/org/$orgId/applicants'
     | '/app/org/$orgId/opportunities'
+    | '/app/org/$orgId/opportunities/$opportunityId/edit'
   id:
     | '__root__'
     | '/'
@@ -637,6 +673,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities/'
@@ -651,12 +688,14 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id_/apply'
     | '/app/org/$orgId/_employer/'
     | '/app/org/$orgId/partner/'
     | '/app/org/$orgId/_employer/applicants/$applicationId'
     | '/app/org/$orgId/_employer/opportunities/new'
     | '/app/org/$orgId/_employer/applicants/'
     | '/app/org/$orgId/_employer/opportunities/'
+    | '/app/org/$orgId/_employer/opportunities/$opportunityId/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -915,6 +954,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppTalentPassportPortfolioRouteImport
       parentRoute: typeof AppTalentPassportRoute
     }
+    '/app/talent/passport/preview': {
+      id: '/app/talent/passport/preview'
+      path: '/preview'
+      fullPath: '/app/talent/passport/preview'
+      preLoaderRoute: typeof AppTalentPassportPreviewRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
     '/app/talent/passport/privacy': {
       id: '/app/talent/passport/privacy'
       path: '/privacy'
@@ -1013,6 +1059,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppOrgOrgIdPartnerReportsRouteImport
       parentRoute: typeof AppOrgOrgIdPartnerRoute
     }
+    '/app/talent/opportunities/$id_/apply': {
+      id: '/app/talent/opportunities/$id_/apply'
+      path: '/opportunities/$id/apply'
+      fullPath: '/app/talent/opportunities/$id/apply'
+      preLoaderRoute: typeof AppTalentOpportunitiesIdApplyRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
     '/app/org/$orgId/_employer/applicants/': {
       id: '/app/org/$orgId/_employer/applicants/'
       path: '/applicants'
@@ -1039,6 +1092,13 @@ declare module '@tanstack/react-router' {
       path: '/opportunities/new'
       fullPath: '/app/org/$orgId/opportunities/new'
       preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
+    '/app/org/$orgId/_employer/opportunities/$opportunityId/edit': {
+      id: '/app/org/$orgId/_employer/opportunities/$opportunityId/edit'
+      path: '/opportunities/$opportunityId/edit'
+      fullPath: '/app/org/$orgId/opportunities/$opportunityId/edit'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport
       parentRoute: typeof AppOrgOrgIdEmployerRoute
     }
   }
@@ -1072,6 +1132,7 @@ interface AppTalentPassportRouteChildren {
   AppTalentPassportExperienceRoute: typeof AppTalentPassportExperienceRoute
   AppTalentPassportPersonalRoute: typeof AppTalentPassportPersonalRoute
   AppTalentPassportPortfolioRoute: typeof AppTalentPassportPortfolioRoute
+  AppTalentPassportPreviewRoute: typeof AppTalentPassportPreviewRoute
   AppTalentPassportPrivacyRoute: typeof AppTalentPassportPrivacyRoute
   AppTalentPassportSkillsRoute: typeof AppTalentPassportSkillsRoute
   AppTalentPassportIndexRoute: typeof AppTalentPassportIndexRoute
@@ -1083,6 +1144,7 @@ const AppTalentPassportRouteChildren: AppTalentPassportRouteChildren = {
   AppTalentPassportExperienceRoute: AppTalentPassportExperienceRoute,
   AppTalentPassportPersonalRoute: AppTalentPassportPersonalRoute,
   AppTalentPassportPortfolioRoute: AppTalentPassportPortfolioRoute,
+  AppTalentPassportPreviewRoute: AppTalentPassportPreviewRoute,
   AppTalentPassportPrivacyRoute: AppTalentPassportPrivacyRoute,
   AppTalentPassportSkillsRoute: AppTalentPassportSkillsRoute,
   AppTalentPassportIndexRoute: AppTalentPassportIndexRoute,
@@ -1099,6 +1161,7 @@ interface AppTalentRouteChildren {
   AppTalentIndexRoute: typeof AppTalentIndexRoute
   AppTalentOpportunitiesIdRoute: typeof AppTalentOpportunitiesIdRoute
   AppTalentOpportunitiesIndexRoute: typeof AppTalentOpportunitiesIndexRoute
+  AppTalentOpportunitiesIdApplyRoute: typeof AppTalentOpportunitiesIdApplyRoute
 }
 
 const AppTalentRouteChildren: AppTalentRouteChildren = {
@@ -1109,6 +1172,7 @@ const AppTalentRouteChildren: AppTalentRouteChildren = {
   AppTalentIndexRoute: AppTalentIndexRoute,
   AppTalentOpportunitiesIdRoute: AppTalentOpportunitiesIdRoute,
   AppTalentOpportunitiesIndexRoute: AppTalentOpportunitiesIndexRoute,
+  AppTalentOpportunitiesIdApplyRoute: AppTalentOpportunitiesIdApplyRoute,
 }
 
 const AppTalentRouteWithChildren = AppTalentRoute._addFileChildren(
@@ -1126,6 +1190,7 @@ interface AppOrgOrgIdEmployerRouteChildren {
   AppOrgOrgIdEmployerOpportunitiesNewRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   AppOrgOrgIdEmployerApplicantsIndexRoute: typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   AppOrgOrgIdEmployerOpportunitiesIndexRoute: typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute: typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 
 const AppOrgOrgIdEmployerRouteChildren: AppOrgOrgIdEmployerRouteChildren = {
@@ -1143,6 +1208,8 @@ const AppOrgOrgIdEmployerRouteChildren: AppOrgOrgIdEmployerRouteChildren = {
     AppOrgOrgIdEmployerApplicantsIndexRoute,
   AppOrgOrgIdEmployerOpportunitiesIndexRoute:
     AppOrgOrgIdEmployerOpportunitiesIndexRoute,
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute:
+    AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute,
 }
 
 const AppOrgOrgIdEmployerRouteWithChildren =

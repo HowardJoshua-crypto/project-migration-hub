@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PublicLayout } from "@/components/layout/PublicLayout";
-import { MockBadge } from "@/components/shared/MockBadge";
+import { TestDataBadge } from "@/components/shared/MockBadge";
 import { OpportunityBrowser, validateOpportunitySearch } from "@/components/shared/OpportunityBrowser";
 
 export const Route = createFileRoute("/opportunities/")({
@@ -22,7 +22,7 @@ function OpportunitiesPage() {
   return (
     <PublicLayout>
       <div className="mx-auto max-w-6xl px-4 py-12">
-        <MockBadge />
+        <TestDataBadge />
         <h1 className="mt-2 text-4xl font-bold">Jobs & opportunities</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">Opportunities posted by verified organisations and curated from official sources by the SkillBridge research team.</p>
         <div className="mt-8"><OpportunityBrowser filters={filters} onChange={(f) => navigate({ search: f })} searchTo="/opportunities" /></div>

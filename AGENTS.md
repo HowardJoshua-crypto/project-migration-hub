@@ -31,4 +31,6 @@ use the editor.
 
 ## Project rules
 - Portal routes live under `/app/talent`, `/app/org/$orgId`, `/app/org/$orgId/partner`, `/app/admin`; one shared AppShell driven by a nav config per area, so new areas plug in without new layouts.
-- Phase 2 mock data lives only in `src/mocks/` and every screen using it shows a MockBadge, so later phases can swap in real queries by deleting imports.
+- Screens read and write data only through `src/services/*` (TanStack Query options + async functions); fixtures live only in `src/mocks/`, so the backend phase swaps service bodies without touching screens.
+- Until a real backend exists, services persist to the browser test-data store in `src/services/store.ts`; every screen backed by it shows `TestDataBadge`, and read-only sample screens show `MockBadge`, so nobody mistakes browser-only data for saved records.
+- Business rules (statuses, matching, privacy, publishing, validation) live as pure functions in `src/domain/` and are re-checked inside services, so forms can't bypass them and tests cover them in `src/test/`.
