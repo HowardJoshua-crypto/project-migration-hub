@@ -1,18 +1,96 @@
 {
   "source": "code-archive: screenshot-to-life-main.zip (SkillBridge Uganda, Lovable TanStack Start project)",
   "capabilities": [
-    {"capability": "code", "source": "src/ (routes, layouts, shared components, shadcn ui, styles, hero image)", "outcome": "migrate", "status": "done", "next_action": "none"},
-    {"capability": "schema", "source": "none in archive (no migrations, no ORM schema)", "outcome": "not-applicable", "status": "verified", "next_action": "Phase 3 of the source roadmap will add a Lovable Cloud schema"},
-    {"capability": "records", "source": "src/mocks/data.ts sample data only; no live data store", "outcome": "migrate (bundled sample data)", "status": "done", "next_action": "none"},
-    {"capability": "auth identities", "source": "none: login/signup show a preview notice, no auth provider", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "authorization", "source": "none implemented (planned only)", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "uploaded file bytes", "source": "none", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "external providers", "source": "none detected", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "public endpoints / callbacks / webhooks", "source": "none detected", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "schedules", "source": "none detected", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "secrets", "source": "no environment variables referenced", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "project notes", "source": "roadmap.md, AGENTS.md project rules, .lovable/plan.md", "outcome": "migrate", "status": "done", "next_action": "none"},
-    {"capability": "cutover", "source": "source project was unpublished prototype", "outcome": "not-applicable", "status": "verified", "next_action": "none"},
-    {"capability": "verification", "source": "routes render in preview", "outcome": "verify", "status": "pending", "next_action": "build + browser check of public and portal pages"}
+    {
+      "capability": "code",
+      "source": "src/ (routes, layouts, shared components, shadcn ui, styles, hero image)",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": "none"
+    },
+    {
+      "capability": "schema",
+      "source": "none in archive (no migrations, no ORM schema)",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "Phase 3 of the source roadmap will add a Lovable Cloud schema"
+    },
+    {
+      "capability": "records",
+      "source": "src/mocks/data.ts sample data only; no live data store",
+      "outcome": "migrate (bundled sample data)",
+      "status": "done",
+      "next_action": "none"
+    },
+    {
+      "capability": "auth identities",
+      "source": "none: login/signup show a preview notice, no auth provider",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authorization",
+      "source": "none implemented (planned only)",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "uploaded file bytes",
+      "source": "none",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "external providers",
+      "source": "none detected",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "public endpoints / callbacks / webhooks",
+      "source": "none detected",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "schedules",
+      "source": "none detected",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "secrets",
+      "source": "no environment variables referenced",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "project notes",
+      "source": "roadmap.md, AGENTS.md project rules, .lovable/plan.md",
+      "outcome": "migrate",
+      "status": "done",
+      "next_action": "none"
+    },
+    {
+      "capability": "cutover",
+      "source": "source project was unpublished prototype",
+      "outcome": "not-applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "verification",
+      "source": "build OK, tests pass, 18 pages load without errors, opportunity detail navigation works",
+      "outcome": "verify",
+      "status": "verified",
+      "next_action": "none"
+    }
   ]
 }
