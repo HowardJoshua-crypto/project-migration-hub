@@ -30,6 +30,7 @@ export function useAction<A, R>(
 /** Reads a <form> into a plain object of strings (Radix selects submit through hidden inputs). */
 export function formValues(form: HTMLFormElement): Record<string, string> {
   const out: Record<string, string> = {};
-  new FormData(form).forEach((v, k) => { out[k] = typeof v === "string" ? v : ""; });
+  // "_none" is the placeholder value SelectField uses for an empty choice.
+  new FormData(form).forEach((v, k) => { out[k] = typeof v === "string" && v !== "_none" ? v : ""; });
   return out;
 }
