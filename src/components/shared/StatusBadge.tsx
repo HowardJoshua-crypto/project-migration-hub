@@ -23,7 +23,7 @@ const labels: Record<string, string> = {
 
 export function StatusBadge({ status }: { status: string }) {
   return (
-    <Badge variant={map[status] ?? "outline"} className="capitalize">
+    <Badge variant={map[status] ?? "outline"}>
       {labels[status] ?? status}
     </Badge>
   );
