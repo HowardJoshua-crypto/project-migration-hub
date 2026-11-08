@@ -43,6 +43,7 @@ import { Route as AppTalentPassportEducationRouteImport } from './routes/app.tal
 import { Route as AppTalentPassportExperienceRouteImport } from './routes/app.talent.passport.experience'
 import { Route as AppTalentPassportPersonalRouteImport } from './routes/app.talent.passport.personal'
 import { Route as AppTalentPassportPortfolioRouteImport } from './routes/app.talent.passport.portfolio'
+import { Route as AppTalentPassportPreviewRouteImport } from './routes/app.talent.passport.preview'
 import { Route as AppTalentPassportPrivacyRouteImport } from './routes/app.talent.passport.privacy'
 import { Route as AppTalentPassportSkillsRouteImport } from './routes/app.talent.passport.skills'
 import { Route as AppOrgOrgIdEmployerIndexRouteImport } from './routes/app.org.$orgId._employer.index'
@@ -238,6 +239,12 @@ const AppTalentPassportPortfolioRoute =
     path: '/portfolio',
     getParentRoute: () => AppTalentPassportRoute,
   } as any)
+const AppTalentPassportPreviewRoute =
+  AppTalentPassportPreviewRouteImport.update({
+    id: '/preview',
+    path: '/preview',
+    getParentRoute: () => AppTalentPassportRoute,
+  } as any)
 const AppTalentPassportPrivacyRoute =
   AppTalentPassportPrivacyRouteImport.update({
     id: '/privacy',
@@ -377,6 +384,7 @@ export interface FileRoutesByFullPath {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
@@ -426,6 +434,7 @@ export interface FileRoutesByTo {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities': typeof AppTalentOpportunitiesIndexRoute
@@ -480,6 +489,7 @@ export interface FileRoutesById {
   '/app/talent/passport/experience': typeof AppTalentPassportExperienceRoute
   '/app/talent/passport/personal': typeof AppTalentPassportPersonalRoute
   '/app/talent/passport/portfolio': typeof AppTalentPassportPortfolioRoute
+  '/app/talent/passport/preview': typeof AppTalentPassportPreviewRoute
   '/app/talent/passport/privacy': typeof AppTalentPassportPrivacyRoute
   '/app/talent/passport/skills': typeof AppTalentPassportSkillsRoute
   '/app/talent/opportunities/': typeof AppTalentOpportunitiesIndexRoute
@@ -535,6 +545,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities/'
@@ -584,6 +595,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities'
@@ -637,6 +649,7 @@ export interface FileRouteTypes {
     | '/app/talent/passport/experience'
     | '/app/talent/passport/personal'
     | '/app/talent/passport/portfolio'
+    | '/app/talent/passport/preview'
     | '/app/talent/passport/privacy'
     | '/app/talent/passport/skills'
     | '/app/talent/opportunities/'
@@ -915,6 +928,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppTalentPassportPortfolioRouteImport
       parentRoute: typeof AppTalentPassportRoute
     }
+    '/app/talent/passport/preview': {
+      id: '/app/talent/passport/preview'
+      path: '/preview'
+      fullPath: '/app/talent/passport/preview'
+      preLoaderRoute: typeof AppTalentPassportPreviewRouteImport
+      parentRoute: typeof AppTalentPassportRoute
+    }
     '/app/talent/passport/privacy': {
       id: '/app/talent/passport/privacy'
       path: '/privacy'
@@ -1072,6 +1092,7 @@ interface AppTalentPassportRouteChildren {
   AppTalentPassportExperienceRoute: typeof AppTalentPassportExperienceRoute
   AppTalentPassportPersonalRoute: typeof AppTalentPassportPersonalRoute
   AppTalentPassportPortfolioRoute: typeof AppTalentPassportPortfolioRoute
+  AppTalentPassportPreviewRoute: typeof AppTalentPassportPreviewRoute
   AppTalentPassportPrivacyRoute: typeof AppTalentPassportPrivacyRoute
   AppTalentPassportSkillsRoute: typeof AppTalentPassportSkillsRoute
   AppTalentPassportIndexRoute: typeof AppTalentPassportIndexRoute
@@ -1083,6 +1104,7 @@ const AppTalentPassportRouteChildren: AppTalentPassportRouteChildren = {
   AppTalentPassportExperienceRoute: AppTalentPassportExperienceRoute,
   AppTalentPassportPersonalRoute: AppTalentPassportPersonalRoute,
   AppTalentPassportPortfolioRoute: AppTalentPassportPortfolioRoute,
+  AppTalentPassportPreviewRoute: AppTalentPassportPreviewRoute,
   AppTalentPassportPrivacyRoute: AppTalentPassportPrivacyRoute,
   AppTalentPassportSkillsRoute: AppTalentPassportSkillsRoute,
   AppTalentPassportIndexRoute: AppTalentPassportIndexRoute,
