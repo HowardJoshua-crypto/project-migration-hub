@@ -10,7 +10,7 @@ export function OpportunitySearch({ initial = "", to = "/opportunities" }: { ini
   return (
     <form
       role="search"
-      onSubmit={(e) => { e.preventDefault(); navigate({ to, search: { q: q || undefined, type: undefined, kind: undefined } }); }}
+      onSubmit={(e) => { e.preventDefault(); navigate({ to, search: (prev: Record<string, unknown>) => ({ ...prev, q: q.trim() || undefined }) as never }); }}
       className="flex w-full gap-2 rounded-xl border bg-card p-2 shadow-soft"
     >
       <div className="relative flex-1">
