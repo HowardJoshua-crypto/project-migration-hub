@@ -1,5 +1,13 @@
 # Roadmap
 - [x] Phase 1 Plan and Structure (approved)
 - [x] Phase 2 Build the Interface (approved by starting Phase 3)
-- [x] Phase 3 Core Functionalities (test data saved in the browser) — awaiting user approval
-- [ ] Phase 4 Real backend (accounts, shared database, file uploads, admin verification) — waits on user approval
+- [x] Phase 3 Core Functionalities (test data saved in the browser) — approved by starting Phase 4
+- [ ] Phase 4 Database & Authentication
+  - [ ] Schema, roles, RLS, audit, integrity rules
+  - [ ] Private storage buckets + upload UI with signed URLs
+  - [ ] Sign up / verify email / sign in / sign out / reset password / protected portals / onboarding
+  - [ ] Services switched from browser store to the database
+  - [ ] Admin: organisation + certificate verification, users, audit log
+  - [ ] Seed 5 external listings
+  - [ ] Database permission tests with several accounts + browser flow checks
+- [ ] Phase 5 — waits on user approval
