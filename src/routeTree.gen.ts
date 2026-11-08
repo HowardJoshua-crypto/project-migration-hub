@@ -63,6 +63,7 @@ import { Route as AppOrgOrgIdEmployerApplicantsIndexRouteImport } from './routes
 import { Route as AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport } from './routes/app.org.$orgId._employer.applicants.$applicationId'
 import { Route as AppOrgOrgIdEmployerOpportunitiesIndexRouteImport } from './routes/app.org.$orgId._employer.opportunities.index'
 import { Route as AppOrgOrgIdEmployerOpportunitiesNewRouteImport } from './routes/app.org.$orgId._employer.opportunities.new'
+import { Route as AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport } from './routes/app.org.$orgId._employer.opportunities.$opportunityId.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -358,6 +359,12 @@ const AppOrgOrgIdEmployerOpportunitiesNewRoute =
     path: '/opportunities/new',
     getParentRoute: () => AppOrgOrgIdEmployerRoute,
   } as any)
+const AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute =
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport.update({
+    id: '/opportunities/$opportunityId/edit',
+    path: '/opportunities/$opportunityId/edit',
+    getParentRoute: () => AppOrgOrgIdEmployerRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -413,6 +420,7 @@ export interface FileRoutesByFullPath {
   '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -463,6 +471,7 @@ export interface FileRoutesByTo {
   '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/applicants': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/opportunities': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -520,6 +529,7 @@ export interface FileRoutesById {
   '/app/org/$orgId/_employer/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   '/app/org/$orgId/_employer/applicants/': typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   '/app/org/$orgId/_employer/opportunities/': typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  '/app/org/$orgId/_employer/opportunities/$opportunityId/edit': typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -577,6 +587,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/opportunities/new'
     | '/app/org/$orgId/applicants/'
     | '/app/org/$orgId/opportunities/'
+    | '/app/org/$orgId/opportunities/$opportunityId/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -627,6 +638,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/opportunities/new'
     | '/app/org/$orgId/applicants'
     | '/app/org/$orgId/opportunities'
+    | '/app/org/$orgId/opportunities/$opportunityId/edit'
   id:
     | '__root__'
     | '/'
@@ -683,6 +695,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/_employer/opportunities/new'
     | '/app/org/$orgId/_employer/applicants/'
     | '/app/org/$orgId/_employer/opportunities/'
+    | '/app/org/$orgId/_employer/opportunities/$opportunityId/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1081,6 +1094,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRouteImport
       parentRoute: typeof AppOrgOrgIdEmployerRoute
     }
+    '/app/org/$orgId/_employer/opportunities/$opportunityId/edit': {
+      id: '/app/org/$orgId/_employer/opportunities/$opportunityId/edit'
+      path: '/opportunities/$opportunityId/edit'
+      fullPath: '/app/org/$orgId/opportunities/$opportunityId/edit'
+      preLoaderRoute: typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRouteImport
+      parentRoute: typeof AppOrgOrgIdEmployerRoute
+    }
   }
 }
 
@@ -1170,6 +1190,7 @@ interface AppOrgOrgIdEmployerRouteChildren {
   AppOrgOrgIdEmployerOpportunitiesNewRoute: typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
   AppOrgOrgIdEmployerApplicantsIndexRoute: typeof AppOrgOrgIdEmployerApplicantsIndexRoute
   AppOrgOrgIdEmployerOpportunitiesIndexRoute: typeof AppOrgOrgIdEmployerOpportunitiesIndexRoute
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute: typeof AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute
 }
 
 const AppOrgOrgIdEmployerRouteChildren: AppOrgOrgIdEmployerRouteChildren = {
@@ -1187,6 +1208,8 @@ const AppOrgOrgIdEmployerRouteChildren: AppOrgOrgIdEmployerRouteChildren = {
     AppOrgOrgIdEmployerApplicantsIndexRoute,
   AppOrgOrgIdEmployerOpportunitiesIndexRoute:
     AppOrgOrgIdEmployerOpportunitiesIndexRoute,
+  AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute:
+    AppOrgOrgIdEmployerOpportunitiesOpportunityIdEditRoute,
 }
 
 const AppOrgOrgIdEmployerRouteWithChildren =
