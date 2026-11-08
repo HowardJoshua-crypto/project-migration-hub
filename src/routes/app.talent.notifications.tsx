@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/app/talent/notifications")({ component: Notes });
 
-export const timeAgo = (iso: string) => new Date(iso).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
+const timeAgo = (iso: string) => new Date(iso).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
 
 function Notes() {
   const { data, isPending, isError, refetch } = useQuery(notificationsQuery());

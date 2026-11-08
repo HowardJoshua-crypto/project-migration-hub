@@ -58,6 +58,7 @@ import { Route as AppOrgOrgIdPartnerProfileRouteImport } from './routes/app.org.
 import { Route as AppOrgOrgIdPartnerProgrammesRouteImport } from './routes/app.org.$orgId.partner.programmes'
 import { Route as AppOrgOrgIdPartnerProposalsRouteImport } from './routes/app.org.$orgId.partner.proposals'
 import { Route as AppOrgOrgIdPartnerReportsRouteImport } from './routes/app.org.$orgId.partner.reports'
+import { Route as AppTalentOpportunitiesIdApplyRouteImport } from './routes/app.talent.opportunities.$id_.apply'
 import { Route as AppOrgOrgIdEmployerApplicantsIndexRouteImport } from './routes/app.org.$orgId._employer.applicants.index'
 import { Route as AppOrgOrgIdEmployerApplicantsApplicationIdRouteImport } from './routes/app.org.$orgId._employer.applicants.$applicationId'
 import { Route as AppOrgOrgIdEmployerOpportunitiesIndexRouteImport } from './routes/app.org.$orgId._employer.opportunities.index'
@@ -327,6 +328,12 @@ const AppOrgOrgIdPartnerReportsRoute =
     path: '/reports',
     getParentRoute: () => AppOrgOrgIdPartnerRoute,
   } as any)
+const AppTalentOpportunitiesIdApplyRoute =
+  AppTalentOpportunitiesIdApplyRouteImport.update({
+    id: '/opportunities/$id_/apply',
+    path: '/opportunities/$id/apply',
+    getParentRoute: () => AppTalentRoute,
+  } as any)
 const AppOrgOrgIdEmployerApplicantsIndexRoute =
   AppOrgOrgIdEmployerApplicantsIndexRouteImport.update({
     id: '/applicants/',
@@ -399,6 +406,7 @@ export interface FileRoutesByFullPath {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/': typeof AppOrgOrgIdEmployerIndexRoute
   '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
@@ -449,6 +457,7 @@ export interface FileRoutesByTo {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/partner': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
   '/app/org/$orgId/opportunities/new': typeof AppOrgOrgIdEmployerOpportunitiesNewRoute
@@ -504,6 +513,7 @@ export interface FileRoutesById {
   '/app/org/$orgId/partner/programmes': typeof AppOrgOrgIdPartnerProgrammesRoute
   '/app/org/$orgId/partner/proposals': typeof AppOrgOrgIdPartnerProposalsRoute
   '/app/org/$orgId/partner/reports': typeof AppOrgOrgIdPartnerReportsRoute
+  '/app/talent/opportunities/$id_/apply': typeof AppTalentOpportunitiesIdApplyRoute
   '/app/org/$orgId/_employer/': typeof AppOrgOrgIdEmployerIndexRoute
   '/app/org/$orgId/partner/': typeof AppOrgOrgIdPartnerIndexRoute
   '/app/org/$orgId/_employer/applicants/$applicationId': typeof AppOrgOrgIdEmployerApplicantsApplicationIdRoute
@@ -560,6 +570,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id/apply'
     | '/app/org/$orgId/'
     | '/app/org/$orgId/partner/'
     | '/app/org/$orgId/applicants/$applicationId'
@@ -610,6 +621,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id/apply'
     | '/app/org/$orgId/partner'
     | '/app/org/$orgId/applicants/$applicationId'
     | '/app/org/$orgId/opportunities/new'
@@ -664,6 +676,7 @@ export interface FileRouteTypes {
     | '/app/org/$orgId/partner/programmes'
     | '/app/org/$orgId/partner/proposals'
     | '/app/org/$orgId/partner/reports'
+    | '/app/talent/opportunities/$id_/apply'
     | '/app/org/$orgId/_employer/'
     | '/app/org/$orgId/partner/'
     | '/app/org/$orgId/_employer/applicants/$applicationId'
@@ -1033,6 +1046,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppOrgOrgIdPartnerReportsRouteImport
       parentRoute: typeof AppOrgOrgIdPartnerRoute
     }
+    '/app/talent/opportunities/$id_/apply': {
+      id: '/app/talent/opportunities/$id_/apply'
+      path: '/opportunities/$id/apply'
+      fullPath: '/app/talent/opportunities/$id/apply'
+      preLoaderRoute: typeof AppTalentOpportunitiesIdApplyRouteImport
+      parentRoute: typeof AppTalentRoute
+    }
     '/app/org/$orgId/_employer/applicants/': {
       id: '/app/org/$orgId/_employer/applicants/'
       path: '/applicants'
@@ -1121,6 +1141,7 @@ interface AppTalentRouteChildren {
   AppTalentIndexRoute: typeof AppTalentIndexRoute
   AppTalentOpportunitiesIdRoute: typeof AppTalentOpportunitiesIdRoute
   AppTalentOpportunitiesIndexRoute: typeof AppTalentOpportunitiesIndexRoute
+  AppTalentOpportunitiesIdApplyRoute: typeof AppTalentOpportunitiesIdApplyRoute
 }
 
 const AppTalentRouteChildren: AppTalentRouteChildren = {
@@ -1131,6 +1152,7 @@ const AppTalentRouteChildren: AppTalentRouteChildren = {
   AppTalentIndexRoute: AppTalentIndexRoute,
   AppTalentOpportunitiesIdRoute: AppTalentOpportunitiesIdRoute,
   AppTalentOpportunitiesIndexRoute: AppTalentOpportunitiesIndexRoute,
+  AppTalentOpportunitiesIdApplyRoute: AppTalentOpportunitiesIdApplyRoute,
 }
 
 const AppTalentRouteWithChildren = AppTalentRoute._addFileChildren(
