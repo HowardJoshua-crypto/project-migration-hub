@@ -44,20 +44,30 @@ export function sanitizeVisibility(v: Record<SectionKey, Visibility>): Record<Se
   return out;
 }
 
-/** What anyone on the internet may see: only PUBLIC sections, never contact details. */
-export function publicView(p: TalentProfile): PassportSnapshot {
+export type Audience = "public" | "shared" | "owner";
+
+/**
+ * What a given audience may see.
+ * public = anyone on the internet (PUBLIC sections only, never contact details);
+ * shared = someone you've authorised (PUBLIC + SHARED_ONLY);
+ * owner = you (everything).
+ */
+export function viewFor(p: TalentProfile, audience: Audience): PassportSnapshot {
   const v = sanitizeVisibility(p.visibility);
-  const pub = (k: SectionKey) => v[k] === "PUBLIC";
+  const can = (k: SectionKey) => audience === "owner" || v[k] === "PUBLIC" || (audience === "shared" && v[k] === "SHARED_ONLY");
   return {
     name: p.name, headline: p.headline, location: p.location,
-    about: pub("about") ? p.about : undefined,
-    education: pub("education") ? p.education : undefined,
-    experience: pub("experience") ? p.experience : undefined,
-    skills: pub("skills") ? p.skills : undefined,
-    credentials: pub("credentials") ? p.credentials : undefined,
-    portfolio: pub("portfolio") ? p.portfolio : undefined,
+    about: can("about") ? p.about : undefined,
+    education: can("education") ? p.education : undefined,
+    experience: can("experience") ? p.experience : undefined,
+    skills: can("skills") ? p.skills : undefined,
+    credentials: can("credentials") ? p.credentials : undefined,
+    portfolio: can("portfolio") ? p.portfolio : undefined,
+    contact: audience !== "public" && can("contact") ? { email: p.personal.email, phone: p.personal.phone } : undefined,
   };
 }
+
+export const publicView = (p: TalentProfile) => viewFor(p, "public");
 
 /** Frozen copy of exactly the sections the talent ticked for one application. */
 export function buildSnapshot(p: TalentProfile, sections: ShareableSection[]): PassportSnapshot {
