@@ -132,6 +132,15 @@ describe("workflows (browser test-data store)", () => {
     expect(draft.status).toBe("DRAFT");
     await expect(opps.publishOpportunity("gulu-health", draft.id)).rejects.toThrow("verified");
   });
+  it("organizations can publish with only the required fields filled", async () => {
+    const op = await opps.createOpportunity("pearl-fintech", {
+      title: "Marketing Graduate Trainee", type: "Graduate trainee programme", workArrangement: "On-site", location: "Kampala",
+      openingDate: "2026-11-08", deadline: "2026-12-31", summary: "Rotate across brand, growth and partnerships for a year.",
+      skills: "Marketing, Communication", eligibilitySummary: "Recent graduates.", minEducation: "",
+    }, true);
+    expect(op.status).toBe("PUBLISHED");
+    expect(op.source).toBe("internal");
+  });
   it("closed opportunities stop accepting applications", async () => {
     await opps.closeOpportunity("kampala-code-labs", "op-12");
     await expect(apps.submitApplication({ opportunityId: "op-12", sections: ["about"], coverNote: "" })).rejects.toThrow("not accepting");
