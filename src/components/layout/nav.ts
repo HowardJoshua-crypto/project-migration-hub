@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { seedOrganizations } from "@/mocks/data";
 import {
   BadgeCheck, BarChart3, Bell, Bookmark, Briefcase, Building2, ClipboardList, FileSearch, FileText, Flag, Handshake,
   IdCard, LayoutDashboard, Lightbulb, LineChart, ScrollText, Search, ShieldCheck, Users, UsersRound,
@@ -21,7 +22,7 @@ export const talentArea: AreaConfig = {
 };
 
 export const employerArea = (orgId: string): AreaConfig => ({
-  key: "employer", label: "Employer", subtitle: "Pearl Fintech",
+  key: "employer", label: "Employer", subtitle: seedOrganizations.find((o) => o.id === orgId)?.name ?? "Organization",
   items: [
     { label: "Dashboard", icon: LayoutDashboard, to: "/app/org/$orgId", params: { orgId }, exact: true },
     { label: "Opportunities", icon: Briefcase, to: "/app/org/$orgId/opportunities", params: { orgId } },

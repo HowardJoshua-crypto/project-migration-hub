@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Bell, ChevronsUpDown, Home } from "lucide-react";
+import { useQueryClient } from "@tanstack/react-query";
+import { Bell, ChevronsUpDown, Home, RotateCcw } from "lucide-react";
+import { toast } from "sonner";
 import type { ReactNode } from "react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import {
@@ -7,10 +9,18 @@ import {
   SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { MockBadge } from "@/components/shared/MockBadge";
+import { TestDataBadge } from "@/components/shared/MockBadge";
+import { resetDb } from "@/services/store";
 import type { AreaConfig } from "./nav";
 
 export function AppShell({ area, children }: { area: AreaConfig; children: ReactNode }) {
+  const qc = useQueryClient();
+  const reset = () => {
+    if (!window.confirm("Reset all test data in this browser? Your changes will be lost.")) return;
+    resetDb();
+    void qc.invalidateQueries();
+    toast.success("Test data reset");
+  };
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
@@ -32,7 +42,10 @@ export function AppShell({ area, children }: { area: AreaConfig; children: React
               <DropdownMenuItem asChild><Link to="/app/talent">Talent — Amara Nakato</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/app/org/$orgId" params={{ orgId: "pearl-fintech" }}>Employer — Pearl Fintech</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/app/org/$orgId/partner" params={{ orgId: "makerere" }}>Partner — Makerere Career Office</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/app/org/$orgId" params={{ orgId: "gulu-health" }}>Employer — Gulu Health (unverified)</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/app/admin">Platform admin</Link></DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onSelect={reset}><RotateCcw />Reset test data</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </SidebarHeader>
@@ -72,7 +85,7 @@ export function AppShell({ area, children }: { area: AreaConfig; children: React
           <SidebarTrigger />
           <span className="text-sm font-medium text-muted-foreground">{area.label} portal</span>
           <div className="ml-auto flex items-center gap-2">
-            <span className="hidden sm:inline-flex"><MockBadge label="Prototype preview" /></span>
+            <span className="hidden sm:inline-flex"><TestDataBadge /></span>
             {area.key === "talent" && (
               <Button asChild variant="ghost" size="icon" aria-label="Notifications"><Link to="/app/talent/notifications"><Bell /></Link></Button>
             )}
