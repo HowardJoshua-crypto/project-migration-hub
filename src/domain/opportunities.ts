@@ -36,6 +36,6 @@ export function applyValues(v: OpportunityValues): Omit<Opportunity, "id" | "sta
     summary: v.summary, description: v.description, skills: v.skills, fields: v.fields,
     eligibility: { summary: v.eligibilitySummary, minEducation: v.minEducation || undefined, programmes: v.programmes, locations: v.locations, minExperienceMonths: v.minExperienceMonths || undefined },
     publisher: external ? v.publisher : undefined, sourceUrl: external ? v.sourceUrl : undefined,
-    officialApplyUrl: external ? v.officialApplyUrl : undefined, lastVerified: undefined,
+    officialApplyUrl: external ? v.officialApplyUrl : undefined,
   };
 }
